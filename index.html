@@ -1,171 +1,109 @@
-<!doctype html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <!-- &#x2335;&#9013; -->
 <html>
 <head>
 <meta charset="utf-8">
-<title>ВодоГазАвтоматика</title>
-<link rel="stylesheet" href="stylesheet.css">
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-<link rel="stylesheet" href="ResponsiveSlides.js-master\responsiveslides.css">
+<title>Арматура из нержавеющей стали</title>
 </head>
 
-<body>
-<div class="main">
- <div class="layout">
-  <div class="content">
-	<div class="Logo">
-		<a href="index.html"><img src="images\Logo590x62.svg" title="ВодоГазАвтоматика"/></a>
-	</div>
-	<form action="#" method="get">
-	 <input type="text" name="seek" placeholder="поиск"/>
-	 <select name="fancySelect" class="makeMeFancy" onChange="top.location.href = this.form.fancySelect.options[this.form.fancySelect.selectedIndex].value; return false;">        
-	    <option value="C:\Users\snptc\OneDrive\VodoGazAvtomatika\website02\index.html" selected="selected" data-skip="1">категория</option>
-	    <option value="C:\Users\snptc\OneDrive\VodoGazAvtomatika\website02\sink.html">раковины</option>
-		<option value="C:\Users\snptc\OneDrive\VodoGazAvtomatika\website02\toilet.html">унитазы</option>
-		<option value="C:\Users\snptc\OneDrive\VodoGazAvtomatika\website02\index.html">писуары</option>
-		<option value="C:\Users\snptc\OneDrive\VodoGazAvtomatika\website02\index.html">душевые</option>
-     </select>
-     <!-- <div style="width: 283px;" class="tzSelect">
-	  <div class="selectBox expanded">категория</div>
-	  <ul class="dropDown">
-		<li>раковины</li>
-		<li>унитазы</li>
-		<li>писуары</li>
-		<li>душевые</li>
-	  </ul>
-     </div> -->
-	 <input type="image" src="images\searchButton65x45.svg"/>
-	</form>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
-<script>
-	// Элемент select, который будет замещаться:
-	var select = $('select.makeMeFancy');
-	var selectBoxContainer = $('<div>',{
-		width		: select.outerWidth(),
-		className	: 'tzSelect',
-		html		: '<div class="selectBox"></div>'
-	});
-	var dropDown = $('<ul>',{className:'dropDown'});
-	var selectBox = selectBoxContainer.find('.selectBox');
-	// Цикл по оригинальному элементу select
-	select.find('option').each(function(i){
-		var option = $(this);
-		if(i==select.attr('selectedIndex')){
-			selectBox.html(option.text() + " <b>&#x2335;</b> ");
-		}
-		if(option.data('skip')){
-			return true;
-		}
-		var li = $('<li>',{
-			html:	option.text()
-		});	
-		li.click(function(){
-			selectBox.html(option.text() + " <b>&#x2335;</b> ");
-			dropDown.trigger('hide');
-			// Когда происходит событие click, мы также отражаем
-			// изменения в оригинальном элементе select:
-			select.val(option.val());
-			return false;
-		});
-		dropDown.append(li);
-	});
-	selectBoxContainer.append(dropDown.hide());
-	select.hide().after(selectBoxContainer);
-	// Привязываем пользовательские события show и hide к элементу dropDown:
-	dropDown.bind('show',function(){
-		if(dropDown.is(':animated')){
-			return false;
-		}
-		selectBox.addClass('expanded');
-		dropDown.slideDown();
-	}).bind('hide',function(){
-		if(dropDown.is(':animated')){
-			return false;
-		}
-		selectBox.removeClass('expanded');
-		dropDown.slideUp();
-	}).bind('toggle',function(){
-		if(selectBox.hasClass('expanded')){
-			dropDown.trigger('hide');
-		}
-		else dropDown.trigger('show');
-	});
-	selectBox.click(function(){
-		dropDown.trigger('toggle');
-		return false;
-	});
-	// Если нажать кнопку мыши где-нибудь на странице при открытом элементе dropDown,
-	// он будет спрятан:
-	$(document).click(function(){
-		dropDown.trigger('hide');
-	});
-</script>
-
-	<div style="clear: both"></div>
-	<ul class="menu">
-	    <li><a href="http://vodogaz.spb.ru/partners"><img src="images\partnership62x40.svg" clas="partnership_icon"/> партнерство</a></li>
-	    <li><a href=""><img src="images\orderCall39x40.svg" /> заказать звонок</a></li>
-	    <li><a href="mailto:sales@vodogaz.spb.ru"><img src="images\emailUs42x30.svg" /> написать письмо</a></li>
-	    <li><a href=""><img src="images\schedule40x40.svg" title="Пн–Пт 9:00 – 18:00"/> 8 (812) 677-50-57</a></li>
-	    <li><a href=""><img src="images\cart44x40.svg" /> корзина</a></li>
-	    <li><a href=""><img src="images\favorites38x35.svg" /> избранное</a></li>
-	    <li><a href=""><img src="images\profile30x40.svg" /> профиль</a></li>
-    </ul>
-	<div class="callbacks_container">
-	 <ul class="rslides">
-  	  <li><img src="images\slider1200x600_1.jpg" alt=""></li>
-  	  <li><img src="images\slider1200x600_2.jpg" alt=""></li>
-  	  <li><img src="images\slider1200x600_3.jpg" alt=""></li>
-  	  <li><img src="images\slider1200x600_4.jpg" alt=""></li>
-  	  <li><img src="images\slider1200x600_5.jpg" alt=""></li>
-  	  <li><img src="images\slider1200x600_6.jpg" alt=""></li>
-  	  <li><img src="images\slider1200x600_7.jpg" alt=""></li>
-  	  <li><img src="images\slider1200x600_8.jpg" alt=""></li>
-	 </ul>
-	</div>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script src="ResponsiveSlides.js-master\responsiveslides.min.js"></script>
-<script>
-    $(".rslides").responsiveSlides({
-    	auto: true,
-    	nav: true,
-    	maxwidth: "1200px",
-        namespace: "callbacks"
-    });
-</script>
-
-
-	<ul class="squares">
-	    <li><a href="sink.html"><img src="images\sink273x273.svg" title="Раковины"/></a></li>
-	    <li><a href="toilet.html"><img src="images\toilet273x273.svg" title="Унитазы"/></a></li>
-        <li><a href="urinal.html"><img src="images\urinal273x273.svg" title="Писуары"/></a></li>
-	    <li><a href="shower.html"><img src="images\shower273x273.svg" title="Душевые"/></a></li>
-	    <li><a href="suite.html"><img src="images\set273x273.svg" title="Комплекты"/></a></li>
-    </ul>
-    <div class="footer">
-    	<div class="social">
-     		<p>© 2017 «ВодоГазАвтоматика».</p>
-     		<ul>
-	  			<li><a href=""><img src="images\google52x52.svg"/></a></li>
-	  			<li><a href=""><img src="images\facebook52x52.svg"/></a></li>
-      			<li><a href=""><img src="images\vk52x52.svg"/></a></li>
-	  			<li><a href=""><img src="images\twitter52x52.svg"/></a></li>
-     		</ul>
- 		</div>
- 		<ul class="contacts">
-	  	 <li><a href=""><img src="images\office25x23.svg" width="25px"  height="23px"/></a>Санкт-Петербург, Краснопутиловская ул., 69А</li>
-	  	 <li><a href=""><img src="images\phone25x25.svg" width="25px"  height="25px"/></a>8 (812) 677-50-57</li>
-      	 <li><a href=""><img src="images\schedule28x28.svg" width="28px"  height="28px"/></a>Пн–Пт 9:00 – 18:00</li>
-     	</ul>
-     <!-- <ul class="contacts">
-	  <li><p><a href=""><img src="images\office25x23.svg" width="25px"  height="23px"/></a>Санкт-Петербург, Краснопутиловская ул., 69А</p></li>
-	  <li><p><a href=""><img src="images\phone25x25.svg" width="25px"  height="25px"/></a>8 (812) 677-50-57</p></li>
-      <li><p><a href=""><img src="images\schedule28x28.svg" width="28px"  height="28px"/></a>Пн–Пт 9:00 – 18:00</p></li>
-     </ul> -->
-    </div>
-  </div>
- </div>
-</div>
+<body max-width="600px" min-width="600px" bgcolor="#f2f2f2">
+<table class="main" border="0" cellpadding="40%" cellspacing="0" style="margin: 0 auto; padding:0;" bgcolor="#f2f2f2" max-width="600px" min-width="600px">
+  <tr>
+    <td>
+      <center style="margin: 0 auto;">
+      <table class="layout" border="0" cellpadding="25px" cellspacing="0" style="margin:0 auto; padding:0; max-width:600px; min-width:600px;" max-width="600px" min-width="600px" bgcolor="#ffffff">
+      <tr>
+      <td height="100%">
+      <center style="margin: 0 auto;">
+       <table class="content" border="0" cellpadding="0" cellspacing="0" style="margin:0 auto; padding:0; max-width:600px; min-width:600px;" max-width="600px" min-width="600px" bgcolor="#ffffff">
+       <tr>
+       <td><a href="http://www.vodogaz.spb.ru" style="color: #199cbc; font: 15px Arial, sans-serif; -webkit-text-size-adjust:none; display: block;" target="_blank"><img src="logo400x79.png" alt="" border="0" width="400px" height="79px" style="display:block; float:left;" title="ВодоГазАвтоматика"/></a></td>
+       <td><a href="mailto:sales@vodogaz.spb.ru" style="color: #199cbc; font: 15px Arial, sans-serif; line-height: 30px; -webkit-text-size-adjust:none; display:block; margin-left:50%; float:right; text-decoration:none;" alt="">sales@vodogaz.spb.ru</a>
+       <a href="tel:8 812 677 50 57" value="+78126775057" style="color: #199cbc; font: 15px Arial, sans-serif; line-height: 30px; -webkit-text-size-adjust:none; display:block; margin-left:10%; float:right; text-decoration:none;" title="Пн–Пт 9:00 – 18:00" alt="">8 (812) 677-50-57</a></td>
+       </tr>
+       <tr>
+       <td colspan="5"><center style="color: #199cbc; font: 15px Arial, sans-serif; line-height: 20px; -webkit-text-size-adjust:none; display:block; max-width:600px; min-width:600px; text-align:center;  margin-top:5%;" alt=""><br>КРАН ШАРОВОЙ VEXVE</center></td>
+       </tr>
+       <tr>
+       <td colspan="5"><a href="http://vodogaz.spb.ru/catalog/valve/krani_stalnie_sharovie" style="color: #199cbc; font: 15px Arial, sans-serif; line-height: 20px; -webkit-text-size-adjust:none; display: block;" target="_blank"><img src="sale484x205.jpg" alt="" border="0" width="484px" height="205px" style="display:block; margin:0 auto; margin-top:5%" title="СКИДКИ!"/></a></td>
+       </tr>
+       <tr>
+       <td colspan="5">
+       <table class="topButton" border="0" cellpadding="0" cellspacing="0" style="margin:0 auto; padding:0; background:#5c842d; margin-top:5%;">
+       <tr>
+       <td colspan="5"><center style="max-width:200px; width:200px; height:50px; text-align:center;" alt=""><a href="http://vodogaz.spb.ru/catalog/valve/krani_stalnie_sharovie" style="color: #ffffff; font: 15px Arial, sans-serif; line-height: 50px; -webkit-text-size-adjust:none; display: block; margin:0 auto; text-decoration:none;" target="_blank">Купить</a></center></td>
+       </tr>
+       </table>
+       <table class="equipment" border="0" cellpadding="0" cellspacing="0" style="margin:0 auto; padding:0; margin-top:5%;">
+       <tr>
+       <td colspan="5"><center style="color: #199cbc; font: 15px Arial, sans-serif; line-height: 20px; -webkit-text-size-adjust:none; display:block; max-width:600px; min-width:600px; text-align:center;  margin-top:5%;" alt=""><br>ОБОРУДОВАНИЕ ДЛЯ ИНЖЕНЕРНЫХ СЕТЕЙ</center></td>
+       </tr>
+       </table>
+       <table class="menu" border="0" cellpadding="0" cellspacing="0" style="margin:0 auto; padding:0; text-align:center; margin-top:5%; width:100%;">
+       <tr>
+       <td style="width:20px; max-width: 10%; vertical-align:text-top;"><center style="color: #199cbc; font: 15px Arial, sans-serif; line-height: 20px; -webkit-text-size-adjust:none; display:block; max-width:200px; text-align:center; margin:0 auto;" alt=""><a href="http://vodogaz.spb.ru/delivery" style="color: #199cbc; font: 15px Arial, sans-serif; -webkit-text-size-adjust:none; text-decoration:none; display:block; text-align:center; margin:0 auto;" target="_blank"><img src="logistics82x82.png" alt="" border="0" min-width="82px" max-width="82px" style="display:block; text-align:center; margin:0 auto;" title="Доставка"/><br>Логистика</a></center></td>
+       <td style="width:20px; max-width: 10%; vertical-align:text-top;"><center style="color: #199cbc; font: 15px Arial, sans-serif; line-height: 20px; -webkit-text-size-adjust:none; display:block; max-width:200px; text-align:center; margin:0 auto;" alt=""><a href="http://vodogaz.spb.ru/stock" style="color: #199cbc; font: 15px Arial, sans-serif; -webkit-text-size-adjust:none; text-decoration:none; display:block; text-align:center; margin:0 auto;" target="_blank"><img src="housing82x82.png" alt="" border="0" min-width="82px" max-width="82px" style="display:block; text-align:center; margin:0 auto;" title="Складская программа"/><br>Складская программа</a></center></td>
+       <td style="width:20px; max-width: 10%; vertical-align:text-top;"><center style="color: #199cbc; font: 15px Arial, sans-serif; line-height: 20px; -webkit-text-size-adjust:none; display:block; max-width:200px; text-align:center; margin:0 auto;" alt=""><a href="http://vodogaz.spb.ru/partners" style="color: #199cbc; font: 15px Arial, sans-serif; -webkit-text-size-adjust:none; text-decoration:none; display:block; text-align:center; margin:0 auto;" target="_blank"><img src="partnership82x82.png" alt="" border="0" min-width="82px" max-width="82px" style="display:block; text-align:center; margin:0 auto;" title="Партнерство"/><br>Партнерство</a></center></td>
+       </tr>
+       <tr>
+       <td colspan="5"><center style="color: #199cbc; font: 15px Arial, sans-serif; line-height: 20px; -webkit-text-size-adjust:none; display:block; max-width:600px; min-width:600px; text-align:center;  margin-top:5%;" alt="" ><br>ЗАПОРНАЯ АРМАТУРА НА НАШЕМ САЙТЕ</center></td>
+       </tr>
+       </table>
+       <table class="catalog" border="0" cellpadding="0" cellspacing="0" style="text-align:center; margin:0 auto;margin:0 auto; padding:0; text-align:center; margin-top:5%; width:100%;">
+       <tr>
+       <td style="text-align:center; margin:0 auto;width:50px; max-width: 20%; vertical-align:text-top;"><center style="text-align:center; margin:0 auto;color: #199cbc; font: 15px Arial, sans-serif; line-height: 20px; -webkit-text-size-adjust:none; display:block; max-width:150px; text-align:center; margin:0 auto;" alt=""><a href="http://www.vodogaz.spb.ru/catalog/valve" style="text-align:center; margin:0 auto;color: #199cbc; font: 15px Arial, sans-serif; -webkit-text-size-adjust:none; text-decoration:none; display:block;" target="_blank"><img src="1Faucet91x91_03.jpg" alt="" border="0" style="text-align:center; margin:0 auto;display:block; min-width:91px;  max-width:91px; margin:0 auto;" title="Краны"/><br>Краны</a></center></td>
+       <td style="text-align:center; margin:0 auto;width:50px; max-width: 20%; vertical-align:text-top;"><center style="text-align:center; margin:0 auto;color: #199cbc; font: 15px Arial, sans-serif; line-height: 20px; -webkit-text-size-adjust:none; display:block; max-width:150px; text-align:center; " alt=""><a href="http://www.vodogaz.spb.ru/catalog/valve_1" style="text-align:center; margin:0 auto;color: #199cbc; font: 15px Arial, sans-serif; -webkit-text-size-adjust:none; text-decoration:none; display:block;" target="_blank"><img src="2Latche91x91_05.jpg" alt="" border="0" style="text-align:center; margin:0 auto;display:block; min-width:91px;  max-width:91px;" title="Задвижки"/><br>Задвижки</a></center></td>
+       <td style="text-align:center; margin:0 auto;width:50px; max-width: 20%; vertical-align:text-top;"><center style="text-align:center; margin:0 auto;color: #199cbc; font: 15px Arial, sans-serif; line-height: 20px; -webkit-text-size-adjust:none; display:block; max-width:150px; text-align:center; " alt=""><a href="http://www.vodogaz.spb.ru/catalog/shutter" style="text-align:center; margin:0 auto;color: #199cbc; font: 15px Arial, sans-serif; -webkit-text-size-adjust:none; text-decoration:none; display:block;" target="_blank"><img src="3Shutter91x91_07.jpg" alt="" border="0" style="text-align:center; margin:0 auto;display:block; min-width:91px;  max-width:91px;" title="Затворы"/><br>Затворы</a></center></td>
+       <td style="text-align:center; margin:0 auto;width:50px; max-width: 20%; vertical-align:text-top;"><center style="text-align:center; margin:0 auto;color: #199cbc; font: 15px Arial, sans-serif; line-height: 20px; -webkit-text-size-adjust:none; display:block; max-width:150px; text-align:center; " alt=""><a href="http://www.vodogaz.spb.ru/catalog/valve_2" style="text-align:center; margin:0 auto;color: #199cbc; font: 15px Arial, sans-serif; -webkit-text-size-adjust:none; text-decoration:none; display:block;" target="_blank"><img src="4Valve91x91_09.jpg" alt="" border="0" style="text-align:center; margin:0 auto;display:block; min-width:91px;  max-width:91px;" title="Клапаны"/><br>Клапаны</a></center></td>
+       </tr>
+       <tr>
+       <td style="text-align:center; margin:0 auto;width:50px; max-width: 20%; vertical-align:text-top; padding-top:3%;"><center style="text-align:center; margin:0 auto;color: #199cbc; font: 15px Arial, sans-serif; line-height: 20px; -webkit-text-size-adjust:none; display:block; max-width:150px; text-align:center; " alt=""><a href="http://www.vodogaz.spb.ru/catalog/filtri" style="text-align:center; margin:0 auto;color: #199cbc; font: 15px Arial, sans-serif; -webkit-text-size-adjust:none; text-decoration:none; display:block;" target="_blank"><img src="5Filter91x91_18.jpg" alt="" border="0" style="text-align:center; margin:0 auto;display:block; min-width:91px;  max-width:91px;" title="Фильтры"/><br>Фильтры</a></center></td>
+       <td style="text-align:center; margin:0 auto;width:50px; max-width: 20%; vertical-align:text-top; padding-top:3%;"><center style="text-align:center; margin:0 auto;color: #199cbc; font: 15px Arial, sans-serif; line-height: 20px; -webkit-text-size-adjust:none; display:block; max-width:150px; text-align:center; " alt=""><a href="http://www.vodogaz.spb.ru/catalog/flanges" style="text-align:center; margin:0 auto;color: #199cbc; font: 15px Arial, sans-serif; -webkit-text-size-adjust:none; text-decoration:none; display:block;" target="_blank"><img src="6Parts121x72_03.jpg" alt="" border="0" style="text-align:center; margin:0 auto;display:block; min-width:91px;  max-width:91px;" title="Фланцы"/><br>Детали трубопровода</a></center></td>
+       <td style="text-align:center; margin:0 auto;width:50px; max-width: 20%; vertical-align:text-top; padding-top:3%;"><center style="text-align:center; margin:0 auto;color: #199cbc; font: 15px Arial, sans-serif; line-height: 20px; -webkit-text-size-adjust:none; display:block; max-width:150px; text-align:center; " alt=""><a href="http://www.vodogaz.spb.ru/catalog/demount" style="text-align:center; margin:0 auto;color: #199cbc; font: 15px Arial, sans-serif; -webkit-text-size-adjust:none; text-decoration:none; display:block;" target="_blank"><img src="7DemountingSpigot91x91_22.jpg" alt="" border="0" style="text-align:center; margin:0 auto;display:block; min-width:91px;  max-width:91px;" title="Демонтажные вставки"/><br>Демонтажные вставки</a></center></td>
+       <td style="text-align:center; margin:0 auto;width:50px; max-width: 20%; vertical-align:text-top; padding-top:3%;"><center style="text-align:center; margin:0 auto;color: #199cbc; font: 15px Arial, sans-serif; line-height: 20px; -webkit-text-size-adjust:none; display:block; max-width:150px; text-align:center; " alt=""><a href="http://www.vodogaz.spb.ru/catalog/muff" style="text-align:center; margin:0 auto;color: #199cbc; font: 15px Arial, sans-serif; -webkit-text-size-adjust:none; text-decoration:none; display:block;" target="_blank"><img src="8Coupling91x91_24.jpg" alt="" border="0" style="text-align:center; margin:0 auto;display:block; min-width:91px;  max-width:91px;" title="Муфты и адаптеры"/><br>Муфты и адаптеры</a></center></td>
+       </tr>
+       <tr>
+       <td style="text-align:center; margin:0 auto;width:50px; max-width: 20%; vertical-align:text-top; padding-top:3%;"><center style="text-align:center; margin:0 auto;color: #199cbc; font: 15px Arial, sans-serif; line-height: 20px; -webkit-text-size-adjust:none; display:block; max-width:150px; text-align:center; " alt=""><a href="http://www.vodogaz.spb.ru/catalog/kompensator" style="text-align:center; margin:0 auto;color: #199cbc; font: 15px Arial, sans-serif; -webkit-text-size-adjust:none; text-decoration:none; display:block;" target="_blank"><img src="9Canceller91x91_32.jpg" alt="" border="0" style="text-align:center; margin:0 auto;display:block; min-width:91px;  max-width:91px;" title="Компенсаторы"/><br>Компенсаторы</a></center></td>
+       <td style="text-align:center; margin:0 auto;width:50px; max-width: 20%; vertical-align:text-top; padding-top:3%;"><center style="text-align:center; margin:0 auto;color: #199cbc; font: 15px Arial, sans-serif; line-height: 20px; -webkit-text-size-adjust:none; display:block; max-width:150px; text-align:center; " alt=""><a href="http://www.vodogaz.spb.ru/catalog/power_equipment" style="text-align:center; margin:0 auto;color: #199cbc; font: 15px Arial, sans-serif; -webkit-text-size-adjust:none; text-decoration:none; display:block;" target="_blank"><img src="10Energetic91x91_34.jpg" alt="" border="0" style="text-align:center; margin:0 auto;display:block; min-width:91px;  max-width:91px;" title="Энергетическое оборудование"/><br>Энергетическое оборудование</a></center></td>
+       <td style="text-align:center; margin:0 auto;width:50px; max-width: 20%; vertical-align:text-top; padding-top:3%;"><center style="text-align:center; margin:0 auto;color: #199cbc; font: 15px Arial, sans-serif; line-height: 20px; -webkit-text-size-adjust:none; display:block; max-width:150px; text-align:center; " alt=""><a href="http://www.vodogaz.spb.ru/catalog/metal_plastic_pipes" style="text-align:center; margin:0 auto;color: #199cbc; font: 15px Arial, sans-serif; -webkit-text-size-adjust:none; text-decoration:none; display:block;" target="_blank"><img src="11MetalPlastic91x91_36.jpg" alt="" border="0" style="text-align:center; margin:0 auto;display:block; min-width:91px;  max-width:91px;" title="Металлопластиковые трубы и фитинги"/><br>Металлопластиковые трубы и фитинги</a></center></td>
+       <td style="text-align:center; margin:0 auto;width:50px; max-width: 20%; vertical-align:text-top; padding-top:3%;"><center style="text-align:center; margin:0 auto;color: #199cbc; font: 15px Arial, sans-serif; line-height: 20px; -webkit-text-size-adjust:none; display:block; max-width:150px; text-align:center; " alt=""><a href="http://www.vodogaz.spb.ru/catalog/ppr" style="text-align:center; margin:0 auto;color: #199cbc; font: 15px Arial, sans-serif; -webkit-text-size-adjust:none; text-decoration:none; display:block;" target="_blank"><img src="12Polypropylene91x91_38.jpg" alt="" border="0" style="text-align:center; margin:0 auto;display:block; min-width:91px;  max-width:91px;" title="Полипропиленовые трубы и фитинги"/><br>Полипропиленовые трубы и фитинги</a></center></td>
+       </tr>
+       </table>
+       <table table class="catalog" border="0" cellpadding="0" cellspacing="0" style="margin:0 auto; padding:0; text-align:center; margin-top:5%;">
+       <tr>
+       <td><a href="http://www.vodogaz.spb.ru/catalog/electrowelded_pipes" style="color: #199cbc; font: 15px Arial, sans-serif; line-height: 20px; -webkit-text-size-adjust:none; display: block;" target="_blank"><img src="pipes600x300_.jpg" alt="" border="0" width="600px" height="300px" style="display:block; margin:0 auto; margin-top:5%" title="Нержавеющие трубы"/></a></td>
+       </tr>
+       <table class="topButton" border="0" cellpadding="0" cellspacing="0" style="margin:0 auto; padding:0; background:#5c842d; margin-top:5%;">
+       <tr>
+       <td><center style="max-width:200px; width:200px; height:50px; text-align:center;" alt=""><a href="http://www.vodogaz.spb.ru/catalog/electrowelded_pipes" style="color: #ffffff; font: 15px Arial, sans-serif; line-height: 50px; -webkit-text-size-adjust:none; display: block; margin:0 auto; text-decoration:none;" target="_blank">Выбрать трубу</a></center></td>
+       </tr>
+       </table>
+       </table>
+       <table class="footer" border="0" cellpadding="0" cellspacing="0" style="margin:0 auto; padding:0; margin-top:5%; width:100%;">
+       <tr>
+       <td><a href="mailto:sales@vodogaz.spb.ru" style="color: #199cbc; font: 15px Arial, sans-serif; line-height: 30px; -webkit-text-size-adjust:none; display:block; margin-right:10%; float:left; text-decoration:none;" alt="">sales@vodogaz.spb.ru</a></td>
+       <td><a href="http://vodogaz.spb.ru/contacts" style="color: #5c842d; font: 15px Arial, sans-serif; line-height: 30px; -webkit-text-size-adjust:none; display:block; margin-left:10%; float:right; text-decoration:none;" alt="">Контакты</a>
+       <a href="http://vodogaz.spb.ru/delivery" style="color: #f9dc11; font: 15px Arial, sans-serif; line-height: 30px; -webkit-text-size-adjust:none; display:block; margin-left:10%; float:right; text-decoration:none;" alt="">Доставка</a>
+       <a href="http://vodogaz.spb.ru/catalog" style="color: #199cbc; font: 15px Arial, sans-serif; line-height: 30px; -webkit-text-size-adjust:none; display:block; margin-left:10%; float:right; text-decoration:none;" alt="">Каталог</a> 
+       </td>
+       </tr>
+       <tr>
+       <td><a href="tel:8 812 677 50 57" value="+78126775057" style="color: #199cbc; font: 15px Arial, sans-serif; line-height: 30px; -webkit-text-size-adjust:none; display:block; margin-right:10%; float:left; text-decoration:none;" title="Пн–Пт 9:00 – 18:00" alt="">8 (812) 677-50-57</a></td>
+       <td><a href="http://www.vodogaz.spb.ru" style="color: #000000; font: 15px Arial, sans-serif; line-height: 30px; -webkit-text-size-adjust:none; display:block; margin-left:10%; float:right; text-decoration:none;" title="© 2017 «ВодоГазАвтоматика»" alt="">© 2017 «ВодоГазАвтоматика»</a></td>
+       </tr>
+       </table>
+       </td>
+       </tr>
+       </table>
+      </center>     
+      </td>
+      </tr>
+      </table>
+      </center>   
+    </td>
+  </tr>
+</table>
 </body>
 </html>
-
+<!-- <p><a href="index.html">Посмотреть письмо на сайте<a/></p>-->
+<!--    <td><img src="Slices\Images\pipes600x300_.jpg" alt=""></td>-->
